@@ -1,17 +1,14 @@
-# Используем официальный образ OpenJDK 17
-FROM openjdk:17-jdk-slim
+# Используем образ с предустановленным Maven и Java 17
+FROM maven:3.9.6-eclipse-temurin-17
 
-# Устанавливаем рабочую директорию
+# Рабочая директория
 WORKDIR /app
 
 # Копируем всё содержимое проекта
 COPY . .
 
-# Делаем mvnw исполняемым
-RUN chmod +x ./mvnw
+# Собираем проект (без запуска тестов)
+RUN mvn clean package -DskipTests
 
-# Собираем проект
-RUN ./mvnw clean package -DskipTests
-
-# Запускаем приложение
-CMD ["java", "-jar", "target/avangard-website-0.0.1-SNAPSHOT.jar"]
+# Запускаем JAR
+CMD ["java", "-jar", "target/*.jar"]
