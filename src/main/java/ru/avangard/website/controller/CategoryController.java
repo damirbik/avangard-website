@@ -10,10 +10,14 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/categories")
-@RequiredArgsConstructor
+//@RequiredArgsConstructor
 public class CategoryController {
 
     private final CategoryService categoryService;
+
+    public CategoryController(CategoryService categoryService) {
+        this.categoryService = categoryService;
+    }
 
     @GetMapping
     public ResponseEntity<List<Category>> getAllCategories(){

@@ -11,7 +11,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "subcategory")
-@Data
+//@Data
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
@@ -28,6 +28,38 @@ public class Subcategory {
     @JoinColumn(name = "category_id", nullable = false)
     @JsonBackReference("category-subcategory") // Это "обратная" сторона связи
     private Category category;
+
+    public List<Service> getServices() {
+        return services;
+    }
+
+    public void setServices(List<Service> services) {
+        this.services = services;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
+    public String getSubcategoryName() {
+        return subcategoryName;
+    }
+
+    public void setSubcategoryName(String subcategoryName) {
+        this.subcategoryName = subcategoryName;
+    }
+
+    public Long getSubcategoryId() {
+        return subcategoryId;
+    }
+
+    public void setSubcategoryId(Long subcategoryId) {
+        this.subcategoryId = subcategoryId;
+    }
 
     @OneToMany(mappedBy = "subcategory", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JsonManagedReference("subcategory-service") // Это "владеющая" сторона связи

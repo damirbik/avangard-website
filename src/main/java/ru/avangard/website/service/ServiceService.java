@@ -9,10 +9,14 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-@RequiredArgsConstructor
+//@RequiredArgsConstructor
 public class ServiceService {
 
     public final IServiceRepository serviceRepository;
+
+    public ServiceService(IServiceRepository serviceRepository) {
+        this.serviceRepository = serviceRepository;
+    }
 
     public List<ru.avangard.website.entity.Service> findBySubcategorySubcategoryId(Long id){
         return serviceRepository.findBySubcategorySubcategoryId(id);
