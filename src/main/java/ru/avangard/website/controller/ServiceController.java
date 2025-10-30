@@ -12,10 +12,16 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/services")
-@RequiredArgsConstructor
+//@RequiredArgsConstructor
+@CrossOrigin(origins = "http://localhost:3000")
+
 public class ServiceController {
 
     private final ServiceService serviceService;
+
+    public ServiceController(ServiceService serviceService) {
+        this.serviceService = serviceService;
+    }
 
     /**
      * GET /api/services

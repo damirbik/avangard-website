@@ -10,10 +10,16 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/subcategories")
-@RequiredArgsConstructor
+//@RequiredArgsConstructor
+@CrossOrigin(origins = "http://localhost:3000")
+
 public class SubcategoryController {
 
     private final SubcategoryService subcategoryService;
+
+    public SubcategoryController(SubcategoryService subcategoryService) {
+        this.subcategoryService = subcategoryService;
+    }
 
     @GetMapping
     public ResponseEntity<List<Subcategory>> getAllSubcategories() {

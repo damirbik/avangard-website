@@ -11,7 +11,7 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "service")
-@Data
+//@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
@@ -50,6 +50,102 @@ public class Service {
 
     @Column(name = "meta_keywords")
     private String metaKeywords = "";
+
+    public Subcategory getSubcategory() {
+        return subcategory;
+    }
+
+    public void setSubcategory(Subcategory subcategory) {
+        this.subcategory = subcategory;
+    }
+
+    public String getMetaKeywords() {
+        return metaKeywords;
+    }
+
+    public void setMetaKeywords(String metaKeywords) {
+        this.metaKeywords = metaKeywords;
+    }
+
+    public String getMetaDescription() {
+        return metaDescription;
+    }
+
+    public void setMetaDescription(String metaDescription) {
+        this.metaDescription = metaDescription;
+    }
+
+    public String getMetaTitle() {
+        return metaTitle;
+    }
+
+    public void setMetaTitle(String metaTitle) {
+        this.metaTitle = metaTitle;
+    }
+
+    public String getPicLinkMain() {
+        return picLinkMain;
+    }
+
+    public void setPicLinkMain(String picLinkMain) {
+        this.picLinkMain = picLinkMain;
+    }
+
+    public String getImportant() {
+        return important;
+    }
+
+    public void setImportant(String important) {
+        this.important = important;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public String getExtraText() {
+        return extraText;
+    }
+
+    public void setExtraText(String extraText) {
+        this.extraText = extraText;
+    }
+
+    public String getPicLinkPreview() {
+        return picLinkPreview;
+    }
+
+    public void setPicLinkPreview(String picLinkPreview) {
+        this.picLinkPreview = picLinkPreview;
+    }
+
+    public String getMainText() {
+        return mainText;
+    }
+
+    public void setMainText(String mainText) {
+        this.mainText = mainText;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public Long getServiceId() {
+        return serviceId;
+    }
+
+    public void setServiceId(Long serviceId) {
+        this.serviceId = serviceId;
+    }
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "subcategory_id", nullable = false)

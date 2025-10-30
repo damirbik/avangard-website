@@ -8,10 +8,14 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-@RequiredArgsConstructor
+//@RequiredArgsConstructor
 public class SubcategoryService {
 
     private final ISubcategoryRepository subcategoryRepository;
+
+    public SubcategoryService(ISubcategoryRepository subcategoryRepository) {
+        this.subcategoryRepository = subcategoryRepository;
+    }
 
     public List<Subcategory> getAllSubcategories() {
         return subcategoryRepository.findAll();

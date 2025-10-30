@@ -8,10 +8,14 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-@RequiredArgsConstructor
+//@RequiredArgsConstructor
 public class CategoryService {
 
     public final ICategoryRepository categoryRepository;
+
+    public CategoryService(ICategoryRepository categoryRepository) {
+        this.categoryRepository = categoryRepository;
+    }
 
     public List<Category> getAllCategoriesOrdered() {
         return categoryRepository.findAllByOrderByCategoryId();

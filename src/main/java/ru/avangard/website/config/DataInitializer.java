@@ -15,12 +15,18 @@ import java.util.Arrays;
 import java.util.List;
 
 @Component
-@RequiredArgsConstructor
+//@RequiredArgsConstructor
 public class DataInitializer implements CommandLineRunner {
 
     private final ICategoryRepository categoryRepository;
     private final ISubcategoryRepository subcategoryRepository;
     private final IServiceRepository serviceRepository;
+
+    public DataInitializer(ICategoryRepository categoryRepository, ISubcategoryRepository subcategoryRepository, IServiceRepository serviceRepository) {
+        this.categoryRepository = categoryRepository;
+        this.subcategoryRepository = subcategoryRepository;
+        this.serviceRepository = serviceRepository;
+    }
 
 
     @Override
