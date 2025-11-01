@@ -54,11 +54,11 @@ public class CategoryController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
-    @PostMapping
-    public ResponseEntity<Category> createCategory(@RequestBody Category category) {
-        Category createdCategory = categoryService.createCategory(category);
-        return ResponseEntity.status(HttpStatus.CREATED).body(createdCategory);
-    }
+//    @PostMapping
+//    public ResponseEntity<Category> createCategory(@RequestBody Category category) {
+//        Category createdCategory = categoryService.createCategory(category);
+//        return ResponseEntity.status(HttpStatus.CREATED).body(createdCategory);
+//    }
 
     @PutMapping("/{id}")
     public ResponseEntity<Category> updateCategory(@PathVariable Long id, @RequestBody Category category) {
