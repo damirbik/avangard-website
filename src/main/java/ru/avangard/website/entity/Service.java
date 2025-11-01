@@ -1,10 +1,8 @@
 package ru.avangard.website.entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import jakarta.persistence.*;
@@ -50,6 +48,39 @@ public class Service {
 
     @Column(name = "meta_keywords")
     private String metaKeywords = "";
+
+    @Column(name = "subtitle")
+    private String subtitle;
+
+    @Column(name = "referenceText")
+    private String referenceText;
+
+    @Column(name = "alias")
+    private String alias;
+
+    public String getAlias() {
+        return alias;
+    }
+
+    public void setAlias(String alias) {
+        this.alias = alias;
+    }
+
+    public String getReferenceText() {
+        return referenceText;
+    }
+
+    public void setReferenceText(String referenceText) {
+        this.referenceText = referenceText;
+    }
+
+    public String getSubtitle() {
+        return subtitle;
+    }
+
+    public void setSubtitle(String subtitle) {
+        this.subtitle = subtitle;
+    }
 
     public Subcategory getSubcategory() {
         return subcategory;

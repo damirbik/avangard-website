@@ -24,6 +24,17 @@ public class Subcategory {
     @Column(name = "subcategory_name")
     private String subcategoryName;
 
+    @Column(name = "alias")
+    private String alias;
+
+    public String getAlias() {
+        return alias;
+    }
+
+    public void setAlias(String alias) {
+        this.alias = alias;
+    }
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "category_id", nullable = false)
     @JsonBackReference("category-subcategory") // Это "обратная" сторона связи

@@ -47,9 +47,9 @@ public class SubcategoryController {
 //                .orElse(ResponseEntity.notFound().build());
 //    }
 
-    @GetMapping("/search/{name}")
-    public ResponseEntity<Subcategory> getSubcategoryByName(@PathVariable String name) {
-        return subcategoryService.getSubcategoryByName(name)
+    @GetMapping("/search/{alias}")
+    public ResponseEntity<Subcategory> getSubcategoryByAlias(@PathVariable String alias) {
+        return subcategoryService.getSubcategoryByAlias(alias)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
     }

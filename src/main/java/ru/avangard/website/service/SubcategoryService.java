@@ -25,8 +25,8 @@ public class SubcategoryService {
         return subcategoryRepository.findById(id);
     }
 
-    public Optional<Subcategory> getSubcategoryByName(String name) {
-        return subcategoryRepository.findBySubcategoryName(name);
+    public Optional<Subcategory> getSubcategoryByAlias(String alias) {
+        return subcategoryRepository.findByAlias(alias);
     }
 
     public Optional<Subcategory> getSubcategoryWithServices(Long id) {

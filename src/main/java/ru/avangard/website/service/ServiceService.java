@@ -1,7 +1,7 @@
 package ru.avangard.website.service;
 
-import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import ru.avangard.website.entity.Subcategory;
 import ru.avangard.website.repository.IServiceRepository;
 import ru.avangard.website.repository.ServiceShortProjection;
 
@@ -9,13 +9,16 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-//@RequiredArgsConstructor
 public class ServiceService {
 
     public final IServiceRepository serviceRepository;
 
     public ServiceService(IServiceRepository serviceRepository) {
         this.serviceRepository = serviceRepository;
+    }
+
+    public Optional<ru.avangard.website.entity.Service> getServiceByAlias(String alias) {
+        return serviceRepository.findByAlias(alias);
     }
 
     public List<ru.avangard.website.entity.Service> findBySubcategorySubcategoryId(Long id){
@@ -53,6 +56,10 @@ public class ServiceService {
     public ru.avangard.website.entity.Service updateService(Long id, ru.avangard.website.entity.Service service) {
         service.setServiceId(id);
         return serviceRepository.save(service);
+    }
+
+    public List<ServiceShortProjection> findShortByCategoryId(Long id) {
+        return serviceRepository.findShortByCategoryId(id);
     }
 
     public void deleteService(Long id) {
