@@ -14,7 +14,7 @@ public interface ISubcategoryRepository extends JpaRepository<Subcategory, Long>
     List<Subcategory> findByCategoryCategoryId(Long categoryId);
 
     // Подкатегория по названию
-    Optional<Subcategory> findBySubcategoryName(String subcategoryName);
+    Optional<Subcategory> findByAlias(String alias);
 
     // Подкатегория с услугами
     @Query("SELECT s FROM Subcategory s LEFT JOIN FETCH s.services WHERE s.subcategoryId = :subcategoryId")

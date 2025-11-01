@@ -17,12 +17,11 @@ public interface IServiceRepository extends JpaRepository<Service, Long> {
     // Услуги по ID категории
     List<Service> findBySubcategoryCategoryCategoryId(Long categoryId);
 
+    Optional<Service> findByAlias(String alias);
+
     @Query("SELECT s.serviceId as serviceId, s.title as title, s.picLinkPreview as picLinkPreview " +
             "FROM Service s WHERE s.subcategory.subcategoryId = :subcategoryId")
     List<ServiceShortProjection> findShortBySubcategoryId(@Param("subcategoryId") Long subcategoryId);
-
-//    @Query("SELECT Service.serviceId, Service.title, Service.picLinkPreview FROM Service WHERE Service.subcategory.subcategoryId = :subcategoryId")
-//    List<Service> findShortBySubcategoryId(Long subcategoryId);
 
     // Все услуги с подкатегориями и категориями
     @Query("SELECT s FROM Service s JOIN FETCH s.subcategory sub JOIN FETCH sub.category")
@@ -32,4 +31,10 @@ public interface IServiceRepository extends JpaRepository<Service, Long> {
     @Query("SELECT s FROM Service s JOIN FETCH s.subcategory sub JOIN FETCH sub.category WHERE s.serviceId = :serviceId")
     Optional<Service> findByIdWithSubcategoryAndCategory(Long serviceId);
 
+    @Query("SELECT s.serviceId AS serviceId, " +
+            "       s.title AS title, " +
+            "       s.picLinkPreview AS picLinkPreview " +
+            "FROM Service s " +
+            "WHERE s.subcategory.category.categoryId = :categoryId")
+    List<ServiceShortProjection> findShortByCategoryId(@Param("categoryId") Long categoryId);
 }
