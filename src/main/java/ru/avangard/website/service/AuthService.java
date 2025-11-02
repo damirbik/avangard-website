@@ -28,20 +28,19 @@ public class AuthService {
     }
 
     public String login(String login, String password) {
-        // Проверяем пароль вручную (без AuthenticationManager для упрощения)
         System.out.println(1111111111);
+        System.out.println(login + " " + password);
         Admin admin = adminRepository.findByLogin(login)
                 .orElseThrow(() -> new RuntimeException("Неверный логин или пароль"));
 
         System.out.println(2222222);
         if (!passwordEncoder.matches(password, admin.getPassword())) {
-            System.out.println(33333333);
             throw new RuntimeException("Неверный логин или пароль");
         }
 
         // Загружаем UserDetails для сравнения пароля
         UserDetails userDetails = userDetailsService.loadUserByUsername(login);
-        if (!userDetails.getPassword().equals(password)) {
+        if (!passwordEncoder.matches(password, userDetails.getPassword())) {
             // ⚠️ В реальности используй passwordEncoder.matches(raw, encoded)
             throw new RuntimeException("Неверный логин или пароль");
         }
