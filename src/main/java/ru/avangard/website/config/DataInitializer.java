@@ -1,15 +1,19 @@
 package ru.avangard.website.config;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
+import ru.avangard.website.entity.Admin;
 import ru.avangard.website.entity.Category;
 import ru.avangard.website.entity.Subcategory;
 import ru.avangard.website.entity.Service;
+import ru.avangard.website.repository.IAdminRepository;
 import ru.avangard.website.repository.ICategoryRepository;
 import ru.avangard.website.repository.ISubcategoryRepository;
 import ru.avangard.website.repository.IServiceRepository;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.util.Arrays;
 import java.util.List;
@@ -21,13 +25,21 @@ public class DataInitializer implements CommandLineRunner {
     private final ICategoryRepository categoryRepository;
     private final ISubcategoryRepository subcategoryRepository;
     private final IServiceRepository serviceRepository;
+    private final IAdminRepository adminRepository;
+    private final PasswordEncoder passwordEncoder;
 
-    public DataInitializer(ICategoryRepository categoryRepository, ISubcategoryRepository subcategoryRepository, IServiceRepository serviceRepository) {
+    public DataInitializer(
+            ICategoryRepository categoryRepository,
+            ISubcategoryRepository subcategoryRepository,
+            IServiceRepository serviceRepository,
+            IAdminRepository adminRepository,
+            PasswordEncoder passwordEncoder) {
         this.categoryRepository = categoryRepository;
         this.subcategoryRepository = subcategoryRepository;
         this.serviceRepository = serviceRepository;
+        this.adminRepository = adminRepository;
+        this.passwordEncoder = passwordEncoder;
     }
-
 
     @Override
     @Transactional
@@ -40,6 +52,13 @@ public class DataInitializer implements CommandLineRunner {
         if (categoryRepository.count() > 0) {
             System.out.println("✅ База данных уже содержит данные. Пропускаем инициализацию.");
             return;
+        }
+        if (adminRepository.count() == 0) {
+            Admin admin = new Admin();
+            admin.setLogin("admin");
+            admin.setPassword(passwordEncoder.encode("password123"));
+            adminRepository.save(admin);
+            System.out.println("✅ Администратор создан: login='admin', password='password123'");
         }
 
         System.out.println("🔄 Начинаем инициализацию базы данных...");
