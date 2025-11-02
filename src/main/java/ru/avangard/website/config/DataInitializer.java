@@ -223,7 +223,7 @@ public class DataInitializer implements CommandLineRunner {
         goodsExamination.setMainText("Товароведческая экспертиза - это экспертиза, в процессе которой исследуются товары и их потребительские свойства. Данная экспертиза широко используется в торговле, промышленности, в случае возникновения спорных ситуаций по годности, качеству, подлинности товаров. Проведение товароведческой экспертизы возможно как в досудебном порядке, так и в случае проведения экспертизы по определению суда.");
         goodsExamination.setSubcategory(commodityExamination);
         goodsExamination.setPrice("ОТ 2000Р");
-        goodsExamination.setPicLinkPreview("/images/untitled.png");
+        goodsExamination.setPicLinkPreview("/images/Untitled.png");
         goodsExamination.setPicLinkMain("/images/tovar2.jpg");
         goodsExamination.setMetaTitle("Товароведческая экспертиза в Томске для суда и досудебного урегулирования");
         goodsExamination.setMetaDescription("Профессиональная товароведческая экспертиза в Томске. Проверяем качество, подлинность и дефекты товаров, одежды, обуви. Официальное заключение для суда, поставщиков и покупателей.");
