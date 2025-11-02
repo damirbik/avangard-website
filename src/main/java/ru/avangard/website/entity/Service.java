@@ -32,7 +32,7 @@ public class Service {
     private String extraText;
 
     @Column(name = "price")
-    private int price;
+    private String price;
 
     @Column(name = "important", length = 1000)
     private String important;
@@ -52,8 +52,9 @@ public class Service {
     @Column(name = "subtitle")
     private String subtitle;
 
-    @Column(name = "referenceText")
-    private String referenceText;
+    @Lob
+    @Column(name = "subText", length = 3000)
+    private String subText;
 
     @Column(name = "alias")
     private String alias;
@@ -66,12 +67,12 @@ public class Service {
         this.alias = alias;
     }
 
-    public String getReferenceText() {
-        return referenceText;
+    public String getSubText() {
+        return subText;
     }
 
-    public void setReferenceText(String referenceText) {
-        this.referenceText = referenceText;
+    public void setSubText(String referenceText) {
+        this.subText = referenceText;
     }
 
     public String getSubtitle() {
@@ -130,11 +131,11 @@ public class Service {
         this.important = important;
     }
 
-    public int getPrice() {
+    public String  getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(String  price) {
         this.price = price;
     }
 
