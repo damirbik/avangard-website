@@ -53,13 +53,10 @@ public class DataInitializer implements CommandLineRunner {
             System.out.println("✅ База данных уже содержит данные. Пропускаем инициализацию.");
             return;
         }
-        if (adminRepository.count() == 0) {
-            Admin admin = new Admin();
-            admin.setLogin("admin");
-            admin.setPassword(passwordEncoder.encode("password123"));
-            adminRepository.save(admin);
-            System.out.println("✅ Администратор создан: login='admin', password='password123'");
-        }
+        Admin admin = new Admin();
+        admin.setLogin("admin");
+        admin.setPassword(passwordEncoder.encode("password123"));
+        adminRepository.save(admin);
 
         System.out.println("🔄 Начинаем инициализацию базы данных...");
 
