@@ -136,8 +136,8 @@ public class DataInitializer implements CommandLineRunner {
         independentDamageAssessmentAfterCarAccident.setMainText("Зачастую сумма страхового возмещения, рассчитанная страховой компанией в процессе оценки ущерба автомобиля при ДТП, далека от реальности не в пользу автовладельца. Будь то виновник аварии, с которого взыскивают компенсацию или пострадавший, которому должны выплатить средства на ремонт. И для получения объективных данных необходима независимая экспертиза, которая позволит точно определить, сколько денег потребуется на восстановление автомобиля.");
         independentDamageAssessmentAfterCarAccident.setSubcategory(vehicleAppraisal);
         independentDamageAssessmentAfterCarAccident.setPrice("ОТ 3000 Р");
-        independentDamageAssessmentAfterCarAccident.setPicLinkPreview("/uploads/exp_8.jpg");
-        independentDamageAssessmentAfterCarAccident.setPicLinkMain("/uploads/nezavisimaya_ekspertiza.png");
+        independentDamageAssessmentAfterCarAccident.setPicLinkPreview("/images/exp_8.jpg");
+        independentDamageAssessmentAfterCarAccident.setPicLinkMain("/images/nezavisimaya_ekspertiza.png");
         independentDamageAssessmentAfterCarAccident.setImportant("Независимую экспертизу автомобиля после ДТП в Томске можно проводить КАК ДО, ТАК И ПОСЛЕ оценки ущерба от страховой компании");
         independentDamageAssessmentAfterCarAccident.setMetaTitle("Независимая оценка ущерба после ДТП в Томске | ООО Авангард");
         independentDamageAssessmentAfterCarAccident.setMetaDescription("Независимая экспертиза автомобиля после ДТП в Томске. Поможем оспорить заниженную выплату по каско или ОСАГО. Подготовим отчет для суда. Гарантия, цены от 3000 руб.");
@@ -151,8 +151,8 @@ public class DataInitializer implements CommandLineRunner {
         vehicleRepairQualityExamination.setMainText("Экспертиза качества ремонта по ОСАГО в Томске нужна для того, чтобы предъявить претензии страховой компании, если был выполнен некачественный ремонт по ОСАГО. Многие ремонтные мастерские, которые выполняют такой вид ремонта, не справляются с потоком клиентов от страховых компаний. Учитывая, что время ремонта строго регламентировано, сотрудники автосервиса не всегда могут их соблюсти. От этого страдает качество, у владельцев автомобилей появляются претензии, которые страховые компании часто не признают. Эти проблемы могут быть решены с помощью проведения независимой экспертизы.");
         vehicleRepairQualityExamination.setSubcategory(vehicleAppraisal);
         vehicleRepairQualityExamination.setPrice("ОТ 5000 Р");
-        vehicleRepairQualityExamination.setPicLinkPreview("/uploads/exp_9.jpg");
-        vehicleRepairQualityExamination.setPicLinkMain("/uploads/inner_car.png");
+        vehicleRepairQualityExamination.setPicLinkPreview("/images/exp_9.jpg");
+        vehicleRepairQualityExamination.setPicLinkMain("/images/inner_car.png");
         vehicleRepairQualityExamination.setMetaTitle("Экспертиза качества ремонта по ОСАГО в Томске | ООО Авангард");
         vehicleRepairQualityExamination.setMetaDescription("Некачественно отремонтировали авто по ОСАГО в Томске? Проведем независимую экспертизу качества ремонта. Официальный отчет для претензий к страховой и в суд. Стоимость от 5000 руб.");
         vehicleRepairQualityExamination.setMetaKeywords("экспертиза качества ремонта автомобиля, некачественный ремонт по ОСАГО Томск, проверка авто после ремонта, экспертиза кузовного ремонта, оценка лакокрасочного покрытия, оспорить ремонт по страховке, независимая экспертиза авто Томск, ООО Авангард");
@@ -164,8 +164,8 @@ public class DataInitializer implements CommandLineRunner {
         professionalVehicleAppraisal.setMainText("Решить вопрос цены самостоятельно, не допустив при этом ошибок, которые подстерегают на каждом шагу, достаточно сложно. Гораздо проще обратиться к профессиональному оценщику, который осуществит оценку автомобиля и подробно укажет, что и как повлияло на формирование стоимости. Затраты на работу оценщика будут значительно меньше, чем материальные и моральные потери, неизбежные при самостоятельной оценке автомобиля.");
         professionalVehicleAppraisal.setSubcategory(vehicleAppraisal);
         professionalVehicleAppraisal.setPrice("ОТ 3000 Р");
-        professionalVehicleAppraisal.setPicLinkPreview("/uploads/exp_7.jpg");
-        professionalVehicleAppraisal.setPicLinkMain("/uploads/auto_zoom.png");
+        professionalVehicleAppraisal.setPicLinkPreview("/images/exp_7.jpg");
+        professionalVehicleAppraisal.setPicLinkMain("/images/auto_zoom.png");
         professionalVehicleAppraisal.setImportant("Перечень необходимых документов: Свидетельство о регистрации транспортного средства, Паспорт транспортного средства");
         professionalVehicleAppraisal.setMetaTitle("Оценка автомобиля для продажи и суда в Томске | ООО Авангар");
         professionalVehicleAppraisal.setMetaDescription("Профессиональная оценка автомобиля в Томске для суда, продажи или кредита. Точно определяем рыночную стоимость, готовим официальный отчет. Гарантия достоверности. Стоимость от 3000 руб.");
@@ -179,8 +179,8 @@ public class DataInitializer implements CommandLineRunner {
         apartmentAndHousingAppraisal.setMainText("Оценка стоимости недвижимости в Томске, а именно квартиры — это определение рыночной цены права собственности или других прав касательно объекта экспертизы. Для достоверной оценки стоимости объекта жилой недвижимости необходимо учитывать множество факторов : местоположение и тип дома, удаленность от центра, наличие двора и консьержки в подъезде и т. д. Кроме того, отчет об оценке жилой недвижимости, подготовленный профессиональными оценщиками, является официальным документом, который принимается к рассмотрению кредитными отделами банков, судами, другими организациями и государственными учреждениями.");
         apartmentAndHousingAppraisal.setSubcategory(realEstateAppraisal);
         apartmentAndHousingAppraisal.setPrice("ОТ 5000 Р");
-        apartmentAndHousingAppraisal.setPicLinkPreview("/uploads/exp_2.jpg");
-        apartmentAndHousingAppraisal.setPicLinkMain("/uploads/inner_car1.png");
+        apartmentAndHousingAppraisal.setPicLinkPreview("/images/exp_2.jpg");
+        apartmentAndHousingAppraisal.setPicLinkMain("/images/inner_car1.png");
         apartmentAndHousingAppraisal.setImportant("Требуемые документы Список документов может существенно различаться в зависимости от типа объекта. Его следует уточнять при заказе услуги оценки недвижимости.");
         apartmentAndHousingAppraisal.setMetaTitle("Оценка квартир и жилья в Томске для суда, банка, сделки");
         apartmentAndHousingAppraisal.setMetaDescription("Профессиональная оценка рыночной стоимости квартир и жилья в Томске. Подготовим официальный отчет для банка, суда, сделки или наследования. Опытные оценщики, гарантия достоверности.");
@@ -194,8 +194,8 @@ public class DataInitializer implements CommandLineRunner {
         realEstateMarketValueAppraisal.setMainText("Независимая оценка недвижимости в Томске — услуга, которая поможет узнать рыночную стоимость объекта. Процедура должна производиться в ряде случаев: при продаже квартиры, дома, офиса и других видов коммерческой и жилой, городской и загородной недвижимости, при судебных разбирательствах и некоторых других ситуациях.");
         realEstateMarketValueAppraisal.setSubcategory(realEstateAppraisal);
         realEstateMarketValueAppraisal.setPrice("ОТ 5000 Р");
-        realEstateMarketValueAppraisal.setPicLinkPreview("/uploads/exp_4.jpg");
-        realEstateMarketValueAppraisal.setPicLinkMain("/uploads/nedvijimost-germanii.png");
+        realEstateMarketValueAppraisal.setPicLinkPreview("/images/exp_4.jpg");
+        realEstateMarketValueAppraisal.setPicLinkMain("/images/nedvijimost-germanii.png");
         realEstateMarketValueAppraisal.setMetaTitle("Оценка рыночной стоимости недвижимости в Томске | Отчет");
         realEstateMarketValueAppraisal.setMetaDescription("Профессиональная оценка рыночной стоимости любой недвижимости в Томске: квартиры, дома, гаражи, коммерческие объекты. Официальный отчет для суда, банка, сделки купли-продажи.");
         realEstateMarketValueAppraisal.setMetaKeywords("оценка рыночной стоимости недвижимости Томск, оценка стоимости квартиры, оценка коммерческой недвижимости, оценка дома, оценка земельного участка, отчет о стоимости недвижимости");
@@ -208,8 +208,8 @@ public class DataInitializer implements CommandLineRunner {
         apartmentFloodDamageAssessment.setMainText("Независимая экспертиза при заливе в Томске— самый надежный способ разрешить конфликты между соседями. Потерпевшая сторона заинтересована получить максимальную компенсацию, включая моральный ущерб. А виновная сторона будет пытаться всеми силами уменьшить озвученную сумму выплаты. Эксперт же максимальн беспристрастно оценит размер ущерба от залива и рассчитает стоимость восстановительного ремонта. Оценка ущерба от залива квартиры для суда в Томске в рамках процессуальной деятельности проводится на основании постановления выданного судебными органами. В рамках процесса назначается экспертиза, но ее исполнителя стороны могут выбрать самостоятельно. В рамках судебной экспертизы все необходимые документы передаются судебными исполнителями.");
         apartmentFloodDamageAssessment.setSubcategory(damageAssessment);
         apartmentFloodDamageAssessment.setPrice("ОТ 3000 Р");
-        apartmentFloodDamageAssessment.setPicLinkPreview("/uploads/exp_1.jpg");
-        apartmentFloodDamageAssessment.setPicLinkMain("/uploads/54941.png");
+        apartmentFloodDamageAssessment.setPicLinkPreview("/images/exp_1.jpg");
+        apartmentFloodDamageAssessment.setPicLinkMain("/images/54941.png");
         apartmentFloodDamageAssessment.setImportant("Перечень необходимых документов: Свидетельство о праве собственности либо выписка из ЕГРП. Документы БТИ (экспликация и поэтажный план). Акт управляющей компании о заливе.");
         apartmentFloodDamageAssessment.setMetaTitle("Оценка ущерба после залива квартиры в Томске для суда");
         apartmentFloodDamageAssessment.setMetaDescription("Проведем независимую оценку ущерба после залива квартиры в Томске. Беспристрастный расчет стоимости ремонта. Официальный отчет для суда и взыскания компенсации с виновника.");
@@ -223,8 +223,8 @@ public class DataInitializer implements CommandLineRunner {
         goodsExamination.setMainText("Товароведческая экспертиза - это экспертиза, в процессе которой исследуются товары и их потребительские свойства. Данная экспертиза широко используется в торговле, промышленности, в случае возникновения спорных ситуаций по годности, качеству, подлинности товаров. Проведение товароведческой экспертизы возможно как в досудебном порядке, так и в случае проведения экспертизы по определению суда.");
         goodsExamination.setSubcategory(commodityExamination);
         goodsExamination.setPrice("ОТ 2000Р");
-        goodsExamination.setPicLinkPreview("/uploads/untitled.png");
-        goodsExamination.setPicLinkMain("/uploads/tovar2.jpg");
+        goodsExamination.setPicLinkPreview("/images/untitled.png");
+        goodsExamination.setPicLinkMain("/images/tovar2.jpg");
         goodsExamination.setMetaTitle("Товароведческая экспертиза в Томске для суда и досудебного урегулирования");
         goodsExamination.setMetaDescription("Профессиональная товароведческая экспертиза в Томске. Проверяем качество, подлинность и дефекты товаров, одежды, обуви. Официальное заключение для суда, поставщиков и покупателей.");
         goodsExamination.setMetaKeywords("товароведческая экспертиза Томск, экспертиза качества товара, независимая экспертиза товаров, экспертиза одежды и обуви, судебная товароведческая экспертиза, экспертиза для суда");
@@ -238,8 +238,8 @@ public class DataInitializer implements CommandLineRunner {
         sanitaryAndEpidemlExamination.setMainText("Наша организация осуществляет проведение экспертиз по оценке соответствия объекта исследований требованиям санитарного законодательства. Основной задачей данного рода экспертной оценки является установление соответствия (либо несоответствия) требований, установленных государственными санитарно-эпидемиологическими правилами и гигиеническими нормативами к обеспечению безопасности и  безвредности для человека факторов среды обитания, условий деятельности юридических лиц и граждан, используемых ими территорий, зданий, строений, сооружений, помещений, оборудования, транспортных средств. В отношении безопасности продукции и связанных с требованиями к продукции процессов ее производства, хранения, перевозки, реализации, эксплуатации, применения (использования) и утилизации, экспертная оценка также осуществляется на соответствие требованиям, которые устанавливаются документами, принятыми в соответствии с международными договорами Российской Федерации, и техническими регламентами.");
         sanitaryAndEpidemlExamination.setSubcategory(sanitaryAndEpidemiologicalExamination);
         sanitaryAndEpidemlExamination.setPrice("ОТ 2000Р");
-        sanitaryAndEpidemlExamination.setPicLinkPreview("/uploads/expert-2.webp");
-        sanitaryAndEpidemlExamination.setPicLinkMain("/uploads/saepidem.jpg");
+        sanitaryAndEpidemlExamination.setPicLinkPreview("/images/expert-2.webp");
+        sanitaryAndEpidemlExamination.setPicLinkMain("/images/saepidem.jpg");
         sanitaryAndEpidemlExamination.setMetaTitle("Санитарно-эпидемиологическая экспертиза в Томске | Протокол");
         sanitaryAndEpidemlExamination.setMetaDescription("Профессиональная санитарно-эпидемиологическая экспертиза в Томске. Проверяем объекты на соответствие СанПиН и гигиеническим нормативам. Официальное заключение для бизнеса и суда.");
         sanitaryAndEpidemlExamination.setMetaKeywords("санитарно-эпидемиологическая экспертиза Томск, экспертиза СанПиН, проверка соответствия санитарным нормам, СЭЭ экспертиза, заключение Роспотребнадзора, гигиеническая экспертиза");
