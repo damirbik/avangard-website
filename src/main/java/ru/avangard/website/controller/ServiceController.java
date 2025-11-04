@@ -2,6 +2,8 @@ package ru.avangard.website.controller;
 
 
 import org.springframework.web.multipart.MultipartFile;
+import ru.avangard.website.dto.ServiceCreateDTO;
+import ru.avangard.website.dto.ServiceUpdateDTO;
 import ru.avangard.website.entity.Service;
 import ru.avangard.website.entity.Subcategory;
 import ru.avangard.website.repository.ServiceShortProjection;
@@ -141,27 +143,24 @@ public class ServiceController {
         return "/images/" + fileName;
     }
 
-    /**
-     * POST /api/services
-     * Создать новую услугу
-     */
+
     @PostMapping
-    public ResponseEntity<Service> createService(@RequestBody Service service) {
-        Service createdService = serviceService.createService(service);
-        return ResponseEntity.status(HttpStatus.CREATED).body(createdService);
+    public ResponseEntity<Service> createService(@RequestBody ServiceCreateDTO dto) {
+        Service created = (Service) serviceService.createService(dto);
+        return ResponseEntity.status(HttpStatus.CREATED).body(created);
     }
 
-    /**
-     * PUT /api/services/{id}
-     * Обновить существующую услугу
-     */
     @PutMapping("/{id}")
-    public ResponseEntity<Service> updateService(@PathVariable Long id, @RequestBody Service service) {
+    public ResponseEntity<Service> updateService(
+            @PathVariable Long id,
+            @RequestBody ServiceUpdateDTO dto) {
+
         if (!serviceService.existsById(id)) {
             return ResponseEntity.notFound().build();
         }
-        Service updatedService = serviceService.updateService(id, service);
-        return ResponseEntity.ok(updatedService);
+
+        Service updated = serviceService.partialUpdate(id, dto);
+        return ResponseEntity.ok(updated);
     }
 
     /**

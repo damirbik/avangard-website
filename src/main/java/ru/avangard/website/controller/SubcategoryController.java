@@ -4,6 +4,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import ru.avangard.website.dto.SubcategoryCreateDTO;
+import ru.avangard.website.dto.SubcategoryUpdateDTO;
 import ru.avangard.website.entity.Subcategory;
 import ru.avangard.website.service.SubcategoryService;
 import java.util.List;
@@ -47,13 +49,6 @@ public class SubcategoryController {
 //                .orElse(ResponseEntity.notFound().build());
 //    }
 
-    @GetMapping("/search/{alias}")
-    public ResponseEntity<Subcategory> getSubcategoryByAlias(@PathVariable String alias) {
-        return subcategoryService.getSubcategoryByAlias(alias)
-                .map(ResponseEntity::ok)
-                .orElse(ResponseEntity.notFound().build());
-    }
-
     @GetMapping("/category/{categoryId}")
     public ResponseEntity<List<Subcategory>> getSubcategoriesByCategory(@PathVariable Long categoryId) {
         List<Subcategory> subcategories = subcategoryService.getSubcategoriesByCategoryId(categoryId);
@@ -67,18 +62,22 @@ public class SubcategoryController {
 //    }
 
     @PostMapping
-    public ResponseEntity<Subcategory> createSubcategory(@RequestBody Subcategory subcategory) {
-        Subcategory createdSubcategory = subcategoryService.createSubcategory(subcategory);
-        return ResponseEntity.status(HttpStatus.CREATED).body(createdSubcategory);
+    public ResponseEntity<Subcategory> createSubcategory(@RequestBody SubcategoryCreateDTO dto) {
+        Subcategory created = subcategoryService.createSubcategory(dto);
+        return ResponseEntity.status(HttpStatus.CREATED).body(created);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Subcategory> updateSubcategory(@PathVariable Long id, @RequestBody Subcategory subcategory) {
+    public ResponseEntity<Subcategory> updateSubcategory(
+            @PathVariable Long id,
+            @RequestBody SubcategoryUpdateDTO dto) {
+
         if (!subcategoryService.existsById(id)) {
             return ResponseEntity.notFound().build();
         }
-        Subcategory updatedSubcategory = subcategoryService.updateSubcategory(id, subcategory);
-        return ResponseEntity.ok(updatedSubcategory);
+
+        Subcategory updated = subcategoryService.partialUpdate(id, dto);
+        return ResponseEntity.ok(updated);
     }
 
     @DeleteMapping("/{id}")

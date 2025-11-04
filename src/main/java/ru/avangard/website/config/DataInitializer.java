@@ -76,57 +76,46 @@ public class DataInitializer implements CommandLineRunner {
         // Создаем подкатегории
         Subcategory vehicleAppraisal = new Subcategory();
         vehicleAppraisal.setSubcategoryName("Оценка автомобилей");
-        vehicleAppraisal.setAlias("va");
         vehicleAppraisal.setCategory(assessmentServices);
 
         Subcategory realEstateAppraisal = new Subcategory();
         realEstateAppraisal.setSubcategoryName("Оценка недвижимости");
-        realEstateAppraisal.setAlias("rea");
         realEstateAppraisal.setCategory(assessmentServices);
 
         Subcategory damageAssessment = new Subcategory();
         damageAssessment.setSubcategoryName("Оценка ущерба");
-        damageAssessment.setAlias("da");
         damageAssessment.setCategory(assessmentServices);
 
         Subcategory appraisalOfEquipmentMachineryOfficeEquipment = new Subcategory();
         appraisalOfEquipmentMachineryOfficeEquipment.setSubcategoryName("Оценка оборудования, машин, оргтехники");
-        appraisalOfEquipmentMachineryOfficeEquipment.setAlias("assetappraisal");
         appraisalOfEquipmentMachineryOfficeEquipment.setCategory(assessmentServices);
 
         Subcategory businessValuation = new Subcategory();
         businessValuation.setSubcategoryName("Оценка бизнеса");
-        businessValuation.setAlias("ba");
         businessValuation.setCategory(assessmentServices);
 
         Subcategory valuationOfAllTypesOfAssetsAndProperty = new Subcategory();
         valuationOfAllTypesOfAssetsAndProperty.setSubcategoryName("Оценка всех видов активов и имущества");
-        valuationOfAllTypesOfAssetsAndProperty.setAlias("fullappraisal");
         valuationOfAllTypesOfAssetsAndProperty.setCategory(assessmentServices);
 
         Subcategory lawyersForUtilityDebtCollection = new Subcategory();
         lawyersForUtilityDebtCollection.setSubcategoryName("Юристы по взысканию ЖКХ");
-        lawyersForUtilityDebtCollection.setAlias("hkclawyers");
         lawyersForUtilityDebtCollection.setCategory(assessmentServices);
 
         Subcategory commodityExamination = new Subcategory();
         commodityExamination.setSubcategoryName("Экспертиза товаров");
-        commodityExamination.setAlias("ce");
         commodityExamination.setCategory(expertise);
 
         Subcategory sanitaryAndEpidemiologicalExamination = new Subcategory();
         sanitaryAndEpidemiologicalExamination.setSubcategoryName("Санитарно-эпидемиологическая экспертиза");
-        sanitaryAndEpidemiologicalExamination.setAlias("see");
         sanitaryAndEpidemiologicalExamination.setCategory(expertise);
 
         Subcategory fireAndTechnicalExamination = new Subcategory();
         fireAndTechnicalExamination.setSubcategoryName("Пожарно-техническая экспертиза");
-        fireAndTechnicalExamination.setAlias("fte");
         fireAndTechnicalExamination.setCategory(expertise);
 
         Subcategory constructionAndInstallationWorkExamination = new Subcategory();
         constructionAndInstallationWorkExamination.setSubcategoryName("Экспертиза строительно-монтажных работ");
-        constructionAndInstallationWorkExamination.setAlias("caiwe");
         constructionAndInstallationWorkExamination.setCategory(expertise);
 
         // Сохраняем все подкатегории

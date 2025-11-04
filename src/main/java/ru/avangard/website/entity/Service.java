@@ -14,6 +14,7 @@ import jakarta.persistence.*;
 @AllArgsConstructor
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Service {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "service_id")
@@ -41,10 +42,10 @@ public class Service {
     private String picLinkMain;
 
     @Column(name = "meta_title")
-    private String metaTitle = "ООО «Авангард» — Юридическая помощь при ДТП";
+    private String metaTitle = "ООО «Авангард» — Юридическая помощь в Томске";
 
     @Column(name = "meta_description", length = 400)
-    private String metaDescription = "ООО «Авангард» - Любой вид Юридической помощи при ДТП. Помогаем клиентам отстоять их интересы и получить достойную компенсацию в г. Томске и Области";
+    private String metaDescription = "ООО «Авангард» - Любой вид Юридической помощи. Помогаем клиентам отстоять их интересы и получить достойную компенсацию в г. Томске и Области";
 
     @Column(name = "meta_keywords")
     private String metaKeywords = "";

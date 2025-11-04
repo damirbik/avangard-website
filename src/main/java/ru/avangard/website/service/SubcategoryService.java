@@ -2,8 +2,12 @@ package ru.avangard.website.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import ru.avangard.website.dto.SubcategoryCreateDTO;
+import ru.avangard.website.dto.SubcategoryUpdateDTO;
+import ru.avangard.website.entity.Category;
 import ru.avangard.website.entity.Subcategory;
 import ru.avangard.website.repository.ISubcategoryRepository;
+import ru.avangard.website.repository.ICategoryRepository;
 import java.util.List;
 import java.util.Optional;
 
@@ -12,9 +16,11 @@ import java.util.Optional;
 public class SubcategoryService {
 
     private final ISubcategoryRepository subcategoryRepository;
+    private final ICategoryRepository categoryRepository;
 
-    public SubcategoryService(ISubcategoryRepository subcategoryRepository) {
+    public SubcategoryService(ISubcategoryRepository subcategoryRepository, ICategoryRepository categoryRepository) {
         this.subcategoryRepository = subcategoryRepository;
+        this.categoryRepository = categoryRepository;
     }
 
     public List<Subcategory> getAllSubcategories() {
@@ -25,9 +31,6 @@ public class SubcategoryService {
         return subcategoryRepository.findById(id);
     }
 
-    public Optional<Subcategory> getSubcategoryByAlias(String alias) {
-        return subcategoryRepository.findByAlias(alias);
-    }
 
     public Optional<Subcategory> getSubcategoryWithServices(Long id) {
         return subcategoryRepository.findByIdWithServices(id);
@@ -49,7 +52,20 @@ public class SubcategoryService {
         return subcategoryRepository.findAllWithCategory();
     }
 
-    public Subcategory createSubcategory(Subcategory subcategory) {
+    public Subcategory createSubcategory(SubcategoryCreateDTO dto) {
+        if (dto.getSubcategoryName() == null || dto.getSubcategoryName().isBlank()) {
+            throw new IllegalArgumentException("Название подкатегории не может быть пустым");
+        }
+        if (dto.getCategoryId() == null) {
+            throw new IllegalArgumentException("ID категории обязателен");
+        }
+
+        Category category = categoryRepository.findById(dto.getCategoryId())
+                .orElseThrow(() -> new RuntimeException("Категория не найдена: " + dto.getCategoryId()));
+
+        Subcategory subcategory = new Subcategory();
+        subcategory.setSubcategoryName(dto.getSubcategoryName());
+        subcategory.setCategory(category);
         return subcategoryRepository.save(subcategory);
     }
 
@@ -65,4 +81,15 @@ public class SubcategoryService {
     public boolean existsById(Long id) {
         return subcategoryRepository.existsById(id);
     }
+
+    public Subcategory partialUpdate(Long id, SubcategoryUpdateDTO dto) {
+        Subcategory existing = subcategoryRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Подкатегория не найдена"));
+
+        if (dto.getSubcategoryName() != null) {
+            existing.setSubcategoryName(dto.getSubcategoryName());
+        }
+        return subcategoryRepository.save(existing);
+    }
+
 }
