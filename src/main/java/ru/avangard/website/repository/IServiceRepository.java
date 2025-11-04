@@ -19,7 +19,7 @@ public interface IServiceRepository extends JpaRepository<Service, Long> {
 
     Optional<Service> findByAlias(String alias);
 
-    @Query("SELECT s.serviceId as serviceId, s.title as title, s.picLinkPreview as picLinkPreview " +
+    @Query("SELECT s.serviceId as serviceId, s.title as title, s.picLinkPreview as picLinkPreview, s.alias As alias " +
             "FROM Service s WHERE s.subcategory.subcategoryId = :subcategoryId")
     List<ServiceShortProjection> findShortBySubcategoryId(@Param("subcategoryId") Long subcategoryId);
 
@@ -33,7 +33,8 @@ public interface IServiceRepository extends JpaRepository<Service, Long> {
 
     @Query("SELECT s.serviceId AS serviceId, " +
             "       s.title AS title, " +
-            "       s.picLinkPreview AS picLinkPreview " +
+            "       s.picLinkPreview AS picLinkPreview," +
+            "       s.alias As alias " +
             "FROM Service s " +
             "WHERE s.subcategory.category.categoryId = :categoryId")
     List<ServiceShortProjection> findShortByCategoryId(@Param("categoryId") Long categoryId);

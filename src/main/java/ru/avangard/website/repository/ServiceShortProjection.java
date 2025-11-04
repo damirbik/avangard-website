@@ -4,4 +4,5 @@ public interface ServiceShortProjection {
     Long getServiceId();
     String getTitle();
     String getPicLinkPreview();
+    String getAlias();
 }
