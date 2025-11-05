@@ -17,7 +17,8 @@ import java.util.UUID;
 public class ImageUploadController {
 
     @Value("${upload.dir:uploads}")
-    private String uploadDir; // по умолчанию uploads/
+    private String uploadDir = "uploads/images";
+    // по умолчанию uploads/
 
     @PostMapping("/api/upload/image")
     public ResponseEntity<String> uploadImage(@RequestParam("file") MultipartFile file) throws IOException {
@@ -32,6 +33,7 @@ public class ImageUploadController {
         }
         String fileName = UUID.randomUUID() + extension;
 
+        uploadDir = "uploads/images";
         Path filePath = Paths.get(uploadDir).resolve(fileName);
         Files.createDirectories(filePath.getParent());
         Files.write(filePath, file.getBytes());
