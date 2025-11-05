@@ -96,7 +96,7 @@ public class ServiceService {
         return serviceRepository.save(existing);
     }
 
-    public Service createService(ServiceCreateDTO dto) {
+    public ru.avangard.website.entity.Service createService(ServiceCreateDTO dto) {
         if (dto.getTitle() == null || dto.getTitle().isBlank()) {
             throw new IllegalArgumentException("Название услуги обязательно");
         }
@@ -123,7 +123,7 @@ public class ServiceService {
         service.setAlias(dto.getAlias());
         service.setSubcategory(subcategory);
 
-        return (Service) serviceRepository.save(service);
+        return (ru.avangard.website.entity.Service) serviceRepository.save(service);
     }
 
     // Вспомогательный метод (можно вынести в утилиты)

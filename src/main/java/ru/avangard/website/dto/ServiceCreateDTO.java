@@ -1,5 +1,8 @@
 package ru.avangard.website.dto;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class ServiceCreateDTO {
 
     private String title;
@@ -15,7 +18,11 @@ public class ServiceCreateDTO {
     private String subtitle;
     private String subText;
     private String alias;
-    private Long subcategoryId; // ← ID подкатегории
+
+    @JsonProperty("subcategoryId")
+    @JsonFormat(shape = JsonFormat.Shape.STRING)
+    private Long subcategoryId;
+    //private Long subcategoryId; // ← ID подкатегории
 
     // Геттеры и сеттеры
     public String getTitle() { return title; }
