@@ -22,6 +22,7 @@ public class ImageUploadController {
     private String uploadDir = "uploads/images";
     // по умолчанию uploads/
 
+    @CrossOrigin(origins = "https://remjest-avangard-testing-e1b1.twc1.net/")
     @PostMapping("/api/upload/image")
     public ResponseEntity<String> uploadImage(@RequestParam("file") MultipartFile file) throws IOException {
         if (file.isEmpty()) {
