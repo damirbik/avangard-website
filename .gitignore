@@ -1,0 +1,15 @@
+# Compiled class file
+*.class
+
+# Database files
+data/*.db
+data/*.mv.db
+
+# Build directories
+target/
+build/
+
+# IDE files
+.idea/
+.vscode/
+*.iml
