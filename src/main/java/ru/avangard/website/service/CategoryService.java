@@ -1,6 +1,5 @@
 package ru.avangard.website.service;
 
-import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import ru.avangard.website.entity.Category;
 import ru.avangard.website.repository.ICategoryRepository;
