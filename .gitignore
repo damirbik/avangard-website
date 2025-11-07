@@ -1,5 +1,15 @@
-# Игнорировать скомпилированные файлы
-/target/
+# Compiled class file
+*.class
 
-# Игнорировать базу данных H2
-/data/
+# Database files
+data/*.db
+data/*.mv.db
+
+# Build directories
+target/
+build/
+
+# IDE files
+.idea/
+.vscode/
+*.iml
