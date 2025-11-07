@@ -17,7 +17,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "https://remjest-avangard-testing-e1b1.twc1.net/")
 
 public class Subcategory {
     @Id

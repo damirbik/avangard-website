@@ -23,7 +23,7 @@ import org.springframework.beans.factory.annotation.Value;
 
 @RestController
 @RequestMapping("/api/services")
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "https://remjest-avangard-testing-e1b1.twc1.net/")
 
 public class ServiceController {
 

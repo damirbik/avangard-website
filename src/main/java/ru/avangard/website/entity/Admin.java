@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "https://remjest-avangard-testing-e1b1.twc1.net/")
 
 public class Admin {
     @Id

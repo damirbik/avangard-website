@@ -9,9 +9,8 @@ import ru.avangard.website.service.CategoryService;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "https://remjest-avangard-testing-e1b1.twc1.net/")
 @RequestMapping("/api/categories")
-@CrossOrigin(origins = "http://localhost:3000")
-
 //@RequiredArgsConstructor
 public class CategoryController {
 

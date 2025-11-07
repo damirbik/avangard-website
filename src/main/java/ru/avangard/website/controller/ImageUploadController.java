@@ -14,7 +14,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.UUID;
 
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "https://remjest-avangard-testing-e1b1.twc1.net/")
 @RestController
 public class ImageUploadController {
 
